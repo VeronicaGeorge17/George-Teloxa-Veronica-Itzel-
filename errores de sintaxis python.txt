@@ -1,0 +1,34 @@
+def preparar_datos(info):
+   # Supone que 'info' será un conjunto, pero realmente espera una lista
+ acumulador = ""
+ for letra in info:
+    acumulador += letra + "-"
+ return acumulador[:-1]
+def mezcla_datos(a, b):
+ # Compara dos cosas que no se deberían comparar directamente
+ if a > b:
+    return a + b
+ elif a == b:
+    return a * 2
+ else:
+    return b + a
+    
+def iniciar():
+    entrada1 = input("Ingresa un valor de referencia textual: ")
+    entrada2 = input("Ingresa otra unidad: ")
+    x = preparar_datos(entrada1) # ¿Por qué usar esto aquí?
+    y = preparar_datos(entrada2) # ya que lo usa como una cadena para no tener algun erros
+    resultado = mezcla_datos(x, y)
+    print("Resultado no final: ", resultado)
+ # El siguiente bloque debe imprimir solo si 'entrada1' está en 'entrada2'
+    if entrada1 in entrada2:
+      print("Coincidencia detectada.") # Error intencional de indentación
+   
+iniciar()
+#errores
+#1. error de sintaxis desde la linea 5 hasta la linea 27.
+# 1.2 los espacios estaban mal desde el inicio lo que  hacia que el programa no corriera correctamente.
+#2 que hace: las variables de entrada1, entrada2 se convierten en x, y lo que nos permite que se reailice la comparacion.
+#3 el codigo tiene como objetivo comparar los datos solicitados y verificar si estos tienen algo en comun.
+
+
