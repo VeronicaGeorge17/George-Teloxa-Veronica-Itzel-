@@ -1,0 +1,17 @@
+def calcular_area():
+    while True:
+        try:
+            base = float(input("Ingrese la base del triángulo: "))
+            altura = float(input("Ingrese la altura del triángulo: "))
+            area = (base * altura) / 2
+            if area > 100:
+                print(f"Área: {area:.2f}. El área es mayor a 100")
+            else:
+                print(f"Área: {area:.2f}. El área es menor a 100")
+            opcion = input("¿Desea calcular otra área? (s/n): ")
+            if opcion.lower() != "s":
+                break
+        except ValueError:
+            print("Error: Ingrese números válidos")
+
+calcular_area()
