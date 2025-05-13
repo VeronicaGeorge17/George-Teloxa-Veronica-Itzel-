@@ -1,0 +1,44 @@
+import tkinter as tk
+
+def calcular_area():
+    try:
+        base = float(entrada_base.get())
+        altura = float(entrada_altura.get())
+
+        area = (base * altura ) / 2
+
+        if area >= 100:
+            resultado = f"El area es {area:.2f}.  Tu area es grande "
+        else:
+            resultado = f"El area es {area:.2f}.  Tu area es pequeña"
+
+        etiqueta_resultado.config(text=resultado)
+
+    except ValueError:
+        etiqueta_resultado.config(text="Ingresa la base y la altura (números)")
+
+ventana = tk.Tk()
+ventana.title("Calculadora del Area del triangulo ")
+ventana.geometry("500x400")
+ventana.config(bg="white") 
+
+etiqueta_titulo = tk.Label(ventana, text="Ingresa las cantidades:", bg="black", font=("Arial", 14))
+etiqueta_titulo.pack(pady=10)
+
+etiqueta1 = tk.Label(ventana, text="Base", bg="green")
+etiqueta1.pack()
+entrada_base = tk.Entry(ventana)
+entrada_base.pack()
+
+etiqueta2 = tk.Label(ventana, text="Altura", bg="green")
+etiqueta2.pack()
+entrada_altura= tk.Entry(ventana)
+entrada_altura.pack()
+
+boton_calcular = tk.Button(ventana, text="Calcular Area", command=calcular_area, bg="white", width=25)
+boton_calcular.pack(pady=20)
+
+etiqueta_resultado = tk.Label(ventana, text="", bg="white", font=("Arial", 12))
+etiqueta_resultado.pack(pady=10)
+
+ventana.mainloop()
